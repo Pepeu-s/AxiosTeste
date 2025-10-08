@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import axios from 'axios';
+import './FormularioProjeto.css';
 
 interface DadosDoProjeto {
     nome: string;
@@ -43,45 +44,55 @@ function FormularioProjeto() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        // Adicione uma classe ao container principal e a cada elemento do formulário.
 
-                <div>
-                    <label htmlFor="nome">Nome</label>
-                    <input
-                        type="text"
-                        id="nome"
-                        value={nome}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNome(e.target.value)}
-                        disabled={enviando}
-                        />
-                </div>
-                <div>
-                    <label htmlFor="link">Link do Projeto</label>
-                    <input
-                        type="text"
-                        id="link"
-                        value={link}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLink(e.target.value)}
-                        disabled={enviando}
-                        />
-                </div>
-                <div>
-                    <label htmlFor="turma">Turma</label>
-                    <input
-                        type="text"
-                        id="turma"
-                        value={turma}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTurma(e.target.value)}
-                        disabled={enviando}
-                        />
-                </div>
-
-                <button type="submit" disabled={enviando}>
-                    {enviando ? 'Enviando...' : 'Enviar'}
-                </button>
-            </form>
+<div>
+    <form onSubmit={handleSubmit} className="meu-formulario">
+        <h2>Adicionar Projeto</h2>
+        <div className="form-group">
+            <label htmlFor="nome">Nome</label>
+            <input
+                type="text"
+                id="nome"
+                className="form-input"
+                placeholder="Ex: Meu Portfólio"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                disabled={enviando}
+            />
         </div>
+
+        <div className="form-group">
+            <label htmlFor="link">Link do Projeto</label>
+            <input
+                type="text"
+                id="link"
+                className="form-input"
+                placeholder="https://github.com/seu-usuario/repo"
+                value={link}
+                onChange={(e) => setLink(e.target.value)}
+                disabled={enviando}
+            />
+        </div>
+
+        <div className="form-group">
+            <label htmlFor="turma">Turma</label>
+            <input
+                type="text"
+                id="turma"
+                className="form-input"
+                placeholder="Ex: Turma 2025"
+                value={turma}
+                onChange={(e) => setTurma(e.target.value)}
+                disabled={enviando}
+            />
+        </div>
+
+        <button type="submit" className="submit-button" disabled={enviando}>
+            {enviando ? 'Enviando...' : 'Enviar Projeto'}
+        </button>
+    </form>
+</div>
     );
 };
 

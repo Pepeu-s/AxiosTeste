@@ -1,0 +1,85 @@
+/* Importe uma fonte legal do Google Fonts (opcional) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Estilo geral do formulário */
+.meu-formulario {
+  font-family: 'Poppins', sans-serif; /* Usa a fonte importada */
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 40px auto; /* Centraliza o formulário na página */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaçamento entre os grupos de inputs */
+}
+
+.meu-formulario h2 {
+  margin: 0 0 10px;
+  color: #333;
+  text-align: center;
+}
+
+/* Agrupa label e input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Espaço entre o label e o input */
+}
+
+/* Estilo das labels (textos "Nome", "Link", etc.) */
+.form-group label {
+  font-weight: 500;
+  color: #555;
+}
+
+/* Estilo dos campos de texto (inputs) */
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+}
+
+/* Efeito visual quando o usuário clica no input */
+.form-input:focus {
+  outline: none;
+  border-color: #007bff; /* Azul vibrante */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilo do input desabilitado */
+.form-input:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+/* Estilo do botão de envio */
+.submit-button {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  margin-top: 10px; /* Espaço extra acima do botão */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px); /* Leve elevação */
+  background: linear-gradient(45deg, #0069d9, #004085);
+}
+
+/* Estilo do botão desabilitado */
+.submit-button:disabled {
+  background: #a0c7ef;
+  cursor: not-allowed;
+}
